@@ -14,7 +14,7 @@ if ($_POST['action'] == 'addArtist') {
 } elseif ($_POST['action'] == 'getData') {
     $artists = $conn->query("SELECT a.*, 
                                 u.username AS created_by, 
-                                u2.username AS updated_by_username 
+                                u2.username AS updated_by 
                          FROM artists a 
                          JOIN users u ON a.user_id = u.id 
                          LEFT JOIN users u2 ON a.updated_by = u2.id 
